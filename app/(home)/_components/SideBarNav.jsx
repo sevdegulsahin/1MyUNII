@@ -28,7 +28,7 @@ function SideBarNav({toggleSideBar}) {
     <div className='h-full bg-white border-r 
     flex flex-col overflow-y-auto shadow-md'>
         <div className='p-5 border-b z-50'>
-        <a href="https://myunilab.net">
+        <a href="/">
             <Image 
             src='/myuni.png'
             alt='logo'
