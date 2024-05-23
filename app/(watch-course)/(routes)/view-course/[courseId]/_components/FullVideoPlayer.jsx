@@ -62,18 +62,14 @@ function FullVideoPlayer({ activeChapter }) {
           <p>Video not available at this time.</p>
         </div>
       )}
-      <div className="p-5 border rounded-lg mt-5 flex justify-between items-center">
-        <h2 className="text-[20px] font-medium">{activeChapter.name}</h2>
-        {!isChapterCompleted(activeChapter.chapterNumber) ? (
-          <button
-            className="bg-purple-500 text-white p-2 px-5 rounded-lg flex gap-2 hover:bg-purple-800"
-            onClick={_markChapterCompleted}
-          >
-            <CheckCircle2 />
-            <h2>Mark as Completed</h2>
-          </button>
-        ) : null}
-      </div>
+      {activeChapter && (
+        <div className="p-5 border rounded-lg mt-5 flex justify-between items-center">
+        <h2 className="text-[20px] font-regular"> 
+        Kursumuza hoş geldin, üstteki çıkan video kısmından kurs videomuzu izleyebilirsin.  {activeChapter.courseContent}
+        </h2>
+        </div>
+      )}
+
     </div>
   );
 }

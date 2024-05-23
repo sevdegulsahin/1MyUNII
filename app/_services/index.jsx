@@ -20,6 +20,7 @@ export const getCourseList=async()=>{
           ... on Chapter {
             videoId
             youtubeUrl
+            courseContent
           }
         }
       }
@@ -34,12 +35,13 @@ export const getCourseById=async(id,userEmail)=>{
   const query=gql`
   query course {
     courseList(where: {id: "`+id+`"}) {
-      chapter(first: 30) {
+      chapter(first: 40) {
         ... on Chapter {
           id
           name
           chapterNumber
           videoId
+          courseContent
           video {
             url
             id
@@ -70,6 +72,7 @@ export const getCourseById=async(id,userEmail)=>{
       }
     }
   }
+  
   
   `
 

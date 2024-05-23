@@ -33,7 +33,7 @@ function SideBarNav({toggleSideBar}) {
             src='/myuni.png'
             alt='logo'
             width={158}
-            height={70}
+            height={60}
             />
         </a>
         </div>
