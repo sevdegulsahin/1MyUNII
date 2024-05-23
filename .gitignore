@@ -34,3 +34,4 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+app/(watch-course)/(routes)/view-course/\[courseId\]/_components/FullVideoPlayer.jsx

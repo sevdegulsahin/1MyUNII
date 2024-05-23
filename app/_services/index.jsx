@@ -32,13 +32,15 @@ export const getCourseById=async(id,userEmail)=>{
   const query=gql`
   query course {
     courseList(where: {id: "`+id+`"}) {
-      chapter (first: 30){
+      chapter(first: 30) {
         ... on Chapter {
           id
           name
           chapterNumber
+          videoId
           video {
             url
+            id
           }
         }
       }
@@ -55,19 +57,18 @@ export const getCourseById=async(id,userEmail)=>{
         url
       }
     }
-    userEnrollCourses(where: {courseId: "`+id+`", 
-    userEmail: "`+userEmail+`"}) {
-    courseId
-    userEmail
-    id
-    completedChapter {
-      ... on CompletedChapter {
-        chapterId
+    userEnrollCourses(where: {courseId: "`+id+`", userEmail: "`+userEmail+`"}) {
+      courseId
+      userEmail
+      id
+      completedChapter {
+        ... on CompletedChapter {
+          chapterId
+        }
       }
     }
-    
   }
-  }
+  
   `
 
   const result=await request(MASTER_URL,query);
