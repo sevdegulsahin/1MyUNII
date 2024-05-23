@@ -2,6 +2,9 @@ import { CheckCircle2, PauseCircle, PlayCircle } from 'lucide-react'
 import React, { useContext, useEffect, useState } from 'react'
 import { CompletedChapterContext } from '../../../../../_context/CompletedChapterContext';
 
+// Logo görüntüsünün URL'si
+const logoUrl = '/myuni.png';
+
 function ChapterNav({course,userCourse,setActiveChapter}) {
     const [activeIndex,setActiveIndex]=useState(0);
     const {completedChapter,setCompletedChapter}=useContext(CompletedChapterContext)
@@ -15,6 +18,13 @@ function ChapterNav({course,userCourse,setActiveChapter}) {
     }
   return (
     <div>
+        {/* Logo */}
+        <div style={{ marginTop: '20px', marginLeft: '5px' }}>
+            <a href="/">
+                <img src={logoUrl} alt="Site Logo" width={170} height={170} />
+            </a>
+        </div>
+
         <div className='border-b p-5'>
             <h2 className='font-medium text-[20px]'>{course.name}</h2>
             <h2 className='text-gray-500 text-[14px]'>By {course.author}</h2>
