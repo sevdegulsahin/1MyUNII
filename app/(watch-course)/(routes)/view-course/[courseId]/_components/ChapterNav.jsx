@@ -21,7 +21,7 @@ function ChapterNav({course,userCourse,setActiveChapter}) {
         {/* Logo */}
         <div style={{ marginTop: '20px', marginLeft: '5px' }}>
             <a href="/">
-                <img src={logoUrl} alt="Site Logo" width={170} height={170} />
+                <img src={logoUrl} alt="Site Logo" width={158} height={70} /> 
             </a>
         </div>
 

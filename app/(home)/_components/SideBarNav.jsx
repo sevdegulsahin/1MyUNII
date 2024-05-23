@@ -32,8 +32,8 @@ function SideBarNav({toggleSideBar}) {
             <Image 
             src='/myuni.png'
             alt='logo'
-            width={170}
-            height={170}
+            width={158}
+            height={70}
             />
         </a>
         </div>
