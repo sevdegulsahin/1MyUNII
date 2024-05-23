@@ -52,12 +52,8 @@ function EnrollmentSection({courseDetail,userCourse}) {
        {courseDetail.free
        &&!courseDetail.youtubeUrl||(userMembership&&!userCourse?.courseId) ?
        <div className='mt-5 border rounded-lg p-4 text-center'>
-            <h2 className='text-gray-500'>Are you ready?</h2>
-            <button
-            className='p-2 w-full bg-purple-500
-            text-white rounded-lg text-[14px] mt-2 
-            hover:bg-purple-700' 
-            onClick={()=>enrollCourse()}>Enroll Now</button>
+            <h2 className='text-gray-500'>This course is no longer for sale</h2>
+            
         </div>
        : !userCourse?.courseId&&!courseDetail.youtubeUrl?
        <div className='mt-5 border rounded-lg p-4 text-center'>
@@ -75,7 +71,7 @@ function EnrollmentSection({courseDetail,userCourse}) {
         <div className='mt-5 
         border rounded-lg p-4 text-center'>
             <h2 className='text-gray-500'>
-                Watch Comlete Course on Youtube for Free! 
+            You can access this training on YouTube 
             </h2>
             <button
             className='p-2 w-full bg-red-500

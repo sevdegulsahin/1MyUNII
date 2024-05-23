@@ -11,7 +11,7 @@ function CourseDetails({courseDetail}) {
                 rounded-full bg-purple-100 p-1' />
                 <h2 className='text-[12px] text-gray-400'>{courseDetail?.totalChapters} Chapters</h2>
         </div>
-        <p className='line-clamp-4 mt-3 text-gray-500'>{courseDetail.description}</p>
+        <p className='line-clamp-6 mt-3 text-gray-500'>{courseDetail.description}</p>
     </div>
   )
 }

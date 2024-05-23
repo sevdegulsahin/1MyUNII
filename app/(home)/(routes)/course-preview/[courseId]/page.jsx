@@ -38,7 +38,7 @@ function CoursePreview({params}) {
           className='rounded-lg'/>}
           <CourseDetails courseDetail={courseDetail}/>
         </div>
-        <div className=' mt-5 md:mt-0'>
+        <div className=' mt-1 md:mt-0'>
           <OptionSection courseDetail={courseDetail}/>
           <EnrollmentSection courseDetail={courseDetail}
           userCourse={userCourse} />
