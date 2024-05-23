@@ -25,7 +25,7 @@ function OptionSection(courseDetail) {
             items-center w-full cursor-pointer'
             onClick={()=>
                 !userMembership
-                ?router.push("https://www.youtube.com/live/qJWaEex-LBE?si=IvuGMB83qR56Jcbq")
+                ?router.push("https://www.youtube.com/@MyUNIEducation")
                 :window.open(courseDetail.courseDetail
                     [option.url])}
             >
