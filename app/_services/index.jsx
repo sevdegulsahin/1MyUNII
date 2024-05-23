@@ -14,6 +14,7 @@ export const getCourseList=async()=>{
         id
         author
         totalChapters
+        videoId
         tag
         chapter {
           ... on Chapter {
@@ -22,7 +23,8 @@ export const getCourseList=async()=>{
           }
         }
       }
-    }  
+    }
+     
     `
     const result=await request(MASTER_URL,query);
     return result;

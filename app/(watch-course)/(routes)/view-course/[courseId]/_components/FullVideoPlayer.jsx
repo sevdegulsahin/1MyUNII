@@ -2,6 +2,8 @@ import { CheckCircle2 } from 'lucide-react';
 import React, { useContext, useState, useEffect } from 'react';
 import { CompletedChapterContext } from '../../../../../_context/CompletedChapterContext';
 import { markChapterCompleted } from './../../../../../_services/index';
+import './video-player.css'; // Assuming video-player.css is in the same directory as FullVideoPlayer.js
+
 
 function FullVideoPlayer({ activeChapter }) {
   const { completedChapter, setCompletedChapter } = useContext(CompletedChapterContext);
@@ -21,7 +23,7 @@ function FullVideoPlayer({ activeChapter }) {
         try {
           const videoId = activeChapter?.videoId;
           if (videoId) {
-            const previewUrl = constructGoogleDrivePreviewUrl(videoId); // Use video.url directly
+            const previewUrl = constructGoogleDrivePreviewUrl(videoId);
             setVideoId(previewUrl);
           } else {
             console.error('Video URL not found in activeChapter.video');
@@ -37,7 +39,7 @@ function FullVideoPlayer({ activeChapter }) {
     fetchVideoId();
   }, [activeChapter]);
 
-  function constructGoogleDrivePreviewUrl(videoId) { // Renamed for clarity
+  function constructGoogleDrivePreviewUrl(videoId) {
     return `https://drive.google.com/file/d/${videoId}/preview`;
   }
 
@@ -45,13 +47,14 @@ function FullVideoPlayer({ activeChapter }) {
     <div className="p-5">
       {videoId ? (
         <iframe
-          width="1157"
-          height="570"
+          width="100%" // Use width: 100% for responsiveness
+          height="56.25%" // Maintain aspect ratio (16:9)
           src={videoId}
           frameBorder="0"
           allow="autoplay; encrypted-media"
           allowFullScreen
           title="Chapter Video"
+          className="aspect-ratio-16x9" // Add aspect ratio class for styling
         />
       ) : (
         <div className="text-center p-5">
@@ -75,4 +78,5 @@ function FullVideoPlayer({ activeChapter }) {
   );
 }
 
-export default FullVideoPlayer;
+
+export default FullVideoPlayer
