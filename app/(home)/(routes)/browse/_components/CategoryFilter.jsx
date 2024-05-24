@@ -18,6 +18,11 @@ function CategoryFilter({selectedCategory}) {
             id:3,
             name:'Wordpress',
             value:'wordpress'
+        },
+        {
+            id:4,
+            name:'BioCom',
+            value:'biocom'
         }
     ]
   return (
