@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 
 function CategoryFilter({ selectedCategory }) {
     const [activeIndex, setActiveIndex] = useState(0);
@@ -9,36 +9,25 @@ function CategoryFilter({ selectedCategory }) {
         { id: 4, name: 'BioCom', value: 'biocom' },
     ];
 
-    const containerRef = useRef(null);
-    const [containerWidth, setContainerWidth] = useState(0);
-
-    useEffect(() => {
-        if (containerRef.current) {
-            setContainerWidth(containerRef.current.offsetWidth);
-        }
-    }, []);
-
     const handleCategoryClick = (item, index) => {
         setActiveIndex(index);
         selectedCategory(item.value);
     };
 
     return (
-        <div className="flex overflow-x-auto py-2" ref={containerRef}>
-            <div className="flex" style={{ width: containerWidth }}>
-                {filterOptions.map((item, index) => (
-                    <button
-                        key={index}
-                        onClick={() => handleCategoryClick(item, index)}
-                        className={`border p-2 px-4 text-sm rounded-md hover:border-purple-800 font-semibold hover:bg-gray-50 ${
-                            activeIndex === index ? 'border-purple-800 bg-purple-50 text-purple-800' : null
-                        }`}
-                        style={{ minWidth: '100px', marginRight: '10px' }}
-                    >
-                        <h2 className="whitespace-nowrap">{item.name}</h2>
-                    </button>
-                ))}
-            </div>
+        <div className="flex overflow-x-auto py-2">
+            {filterOptions.map((item, index) => (
+                <button
+                    key={index}
+                    onClick={() => handleCategoryClick(item, index)}
+                    className={`border p-2 px-4 text-sm rounded-md hover:border-purple-800 font-semibold hover:bg-gray-50 ${
+                        activeIndex === index ? 'border-purple-800 bg-purple-50 text-purple-800' : null
+                    }`}
+                    style={{ flex: '0 0 auto', marginRight: '10px', whiteSpace: 'nowrap' }}
+                >
+                    <h2>{item.name}</h2>
+                </button>
+            ))}
         </div>
     );
 }
