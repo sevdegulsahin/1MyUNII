@@ -48,7 +48,7 @@ function FullVideoPlayer({ activeChapter }) {
       {videoId ? (
         <iframe
           width="100%" // Use width: 100% for responsiveness
-          height="56.25%" // Maintain aspect ratio (16:9)
+          height="100%" // Maintain aspect ratio (16:9)
           src={videoId}
           frameBorder="0"
           allow="autoplay; encrypted-media"

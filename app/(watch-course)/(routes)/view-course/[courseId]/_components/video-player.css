@@ -1,19 +1,18 @@
 /* video-player.css */
 
 .aspect-ratio-16x9 {
-    position: relative;
-    width: 100%;
-    &::after {
-      padding-bottom: 56.25%; /* Maintain 16:9 aspect ratio */
-      display: block;
-      content: "";
-    }
-    iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-    }
+  position: relative;
+  width: 100%;
+  &::after {
+    padding-bottom: 100%; /* Maintain 16:9 aspect ratio */
+    display: block;
+    content: "";
   }
-  
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
