@@ -58,13 +58,9 @@ function EnrollmentSection({courseDetail,userCourse}) {
        : !userCourse?.courseId&&!courseDetail.youtubeUrl?
        <div className='mt-5 border rounded-lg p-4 text-center'>
             <h2 className='text-gray-500 font-light'>
-                Buy Monthly membership and get access to all course, Source code and Track your progress 
+            This training is currently not for sale
             </h2>
-            <button
-            onClick={()=>router.push('/membership')}
-            className='p-2 w-full bg-purple-500
-            text-white rounded-lg text-[14px] mt-2 
-            hover:bg-purple-700'>Buy Membership $2.99/Month</button>
+            
         </div>
       :
       courseDetail.youtubeUrl?
