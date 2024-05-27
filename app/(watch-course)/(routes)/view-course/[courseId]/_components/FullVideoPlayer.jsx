@@ -65,7 +65,7 @@ function FullVideoPlayer({ activeChapter }) {
       {activeChapter && (
         <div className="p-5 border rounded-lg mt-5 flex justify-between items-center">
         <h2 className="text-[20px] font-regular"> 
-        Kursumuza hoş geldin, üstteki çıkan video kısmından kurs videomuzu izleyebilirsin.  {activeChapter.courseContent}
+        {activeChapter.courseContent}
         </h2>
         </div>
       )}
