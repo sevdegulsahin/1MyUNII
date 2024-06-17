@@ -6,7 +6,7 @@ function CategoryFilter({ selectedCategory }) {
         { id: 1, name: 'All', value: 'all' },
         { id: 2, name: 'Biyoinformatik', value: 'biyoinformatik' },
         { id: 3, name: 'Wordpress', value: 'wordpress' },
-        { id: 4, name: 'BioCom', value: 'biocom' },
+        { id: 4, name: 'UNICOM', value: 'unicom' },
     ];
 
     const handleCategoryClick = (item, index) => {
